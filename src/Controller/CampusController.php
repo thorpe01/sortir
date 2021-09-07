@@ -16,4 +16,31 @@ class CampusController extends AbstractController
         return $this->render('campus/index.html.twig', [
         ]);
     }
+
+    /**
+     * @Route("/campus/create", name="campus_create")
+     */
+    public function create(): Response
+    {
+        return $this->render('campus/create.html.twig', [
+        ]);
+    }
+
+    /**
+     * @Route("/campus/update", name="campus_update")
+     */
+    public function update(): Response
+    {
+        return $this->render('campus/update.html.twig', [
+        ]);
+    }
+
+    /**
+     * @Route("/campus/delete", name="campus_delete")
+     */
+    public function delete(): Response
+    {
+        return $this->render('campus/delete.html.twig', [
+        ]);
+    }
 }
