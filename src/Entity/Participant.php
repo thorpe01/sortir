@@ -59,11 +59,6 @@ class Participant implements UserInterface
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $campus;
-
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
     private $maPhoto;
 
     /**
