@@ -51,7 +51,7 @@ class RegistrationFormType extends AbstractType
             ])
             ->add('maPhoto', FileType::class, [
                 'label' => false,
-                'multiple' => true,
+                'multiple' => false,
                 'mapped' => false,
                 'required' => false
             ])
