@@ -70,6 +70,10 @@ class Participant implements UserInterface
      * @ORM\Column(type="boolean")
      */
     private $actif;
+    /**
+     * @var null
+     */
+    private $plainPassword;
 
     public function getId(): ?int
     {
@@ -149,7 +153,7 @@ class Participant implements UserInterface
     public function eraseCredentials()
     {
         // If you store any temporary, sensitive data on the user, clear it here
-        // $this->plainPassword = null;
+         $this->password = null;
     }
 
     public function getPseudo(): ?string
