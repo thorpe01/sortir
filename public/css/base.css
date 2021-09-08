@@ -1,0 +1,44 @@
+
+.login{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.login div {
+    margin-top:5%;
+    width: 25%;
+    height: 25%;
+}
+#btn{
+    width: 120px;
+    margin-top: 20px;
+    margin-left: 30%;
+}
+#title{
+    margin-left: 80px;
+}
+#img{
+    height: 50px;
+    width: 50px;
+}
+footer{
+
+    height: 20px;
+}
+
+
+.form{
+    margin-left: 24%;
+    display: flex;
+    align-content: center;
+
+}
+.form div {
+
+    width: 20%;
+    height: 20%;
+
+}
+
+
+
