@@ -73,7 +73,7 @@ class Participant implements UserInterface
     /**
      * @var null
      */
-    private $plainPassword;
+    private $password;
 
     public function getId(): ?int
     {
