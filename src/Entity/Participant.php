@@ -57,23 +57,19 @@ class Participant implements UserInterface
     private $telephone;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $maPhoto;
 
+    // options={"default" : true} cela permet d'éviter envoie de mail de confirmation
     /**
-     * @ORM\Column(type="boolean")
+     * @ORM\Column(type="boolean", options={"default" : true})
      */
-    private $administrateur;
-
-    /**
-     * @ORM\Column(type="boolean")
-     */
-    private $actif;
+    private $actif = true;
     /**
      * @var null
      */
-    private $password;
+    private $plainPassword;
 
     public function getId(): ?int
     {
@@ -99,7 +95,7 @@ class Participant implements UserInterface
      */
     public function getUsername(): string
     {
-        return (string) $this->email;
+        return (string)$this->email;
     }
 
     /**
@@ -153,7 +149,7 @@ class Participant implements UserInterface
     public function eraseCredentials()
     {
         // If you store any temporary, sensitive data on the user, clear it here
-         $this->password = null;
+        $this->password = null;
     }
 
     public function getPseudo(): ?string

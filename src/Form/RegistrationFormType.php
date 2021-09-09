@@ -39,6 +39,8 @@ class RegistrationFormType extends AbstractType
             ->add('nom', TextType::class)
             ->add('telephone', TextType::class)
             ->add('email', EmailType::class)
+            // EntityType avec sa création permet de pioché dans la table Entity
+            // et de prendre les valeurs
             ->add('campus', EntityType::class, [
                 'class' => Campus::class,
                 'choices' => $this->entityManager->getRepository(Campus::class)->findAll(),
@@ -63,30 +65,29 @@ class RegistrationFormType extends AbstractType
                     ]),
                 ],
             ])
-            ->add('password', PasswordType::class, [
-                // instead of being set onto the object directly,
-                // this is read and encoded in the controller
+            // RepeatedType pour pouvoir double identification
+            ->add('password', RepeatedType::class, [
+                // PasswordType pour le crytage
+                'type' => PasswordType::class,
                 'mapped' => false,
+                // Label permet ici de mettre le MDP et confirmation en FR sur le formulaire
+                'first_options' => ['label' => 'Mot de passe :'],
+                'second_options' => ['label' => 'Confirmation :'],
+                //les deux champs lorsque votre formulaire oblige l'utilisateur à saisir deux
+                //fois le nouveau mot de passe comme confirmation
                 'attr' => ['autocomplete' => 'new-password'],
                 'constraints' => [
                     new NotBlank([
-                        'message' => 'Please enter a password',
+                        'message' => 'Merci de mettre un mot de passe'
                     ]),
                     new Length([
                         'min' => 6,
-                        'minMessage' => 'Your password should be at least {{ limit }} characters',
-                        // max length allowed by Symfony for security reasons
-                        'max' => 32,
+                        'minMessage' => 'votre mot de passe ne contient pas assez de {{ limit }} caractère',
+
+
                     ]),
                 ],
-            ])
-            ->add('password',repeatedType::class,[
-                'first_options'  => ['label' => 'Password'],
-                'second_options' => ['label' => 'Confirmation'],
-
-            ])
-
-        ;
+            ]);
     }
 
     public function configureOptions(OptionsResolver $resolver)
