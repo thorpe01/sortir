@@ -47,9 +47,7 @@ class RegistrationFormType extends AbstractType
                 'choice_label' => function (Campus $campus) {
                     return $campus->getNom();
                 },
-                'mapped' => false,
-//                'mutiple' => false,
-//                'expanded' => true,
+
             ])
             ->add('maPhoto', FileType::class, [
                 'label' => false,

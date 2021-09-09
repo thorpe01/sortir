@@ -7,14 +7,15 @@
         {% include('inc/nav.html.twig') %}
     </header>
     <img class="imgProfil" src="{{ asset('/photos/' ~ participant.maPhoto ) }}" alt="" width="150"><br>
-<div class="form">
-    <div>
-    {{ participant.pseudo }}<br>
-    {{ participant.prenom }}<br>
-    {{ participant.nom }}<br>
-    {{ participant.telephone }}<br>
-    {{ participant.email }}<br>
-    <button type="button">Retour</button>
+    <div class="form">
+        <div>
+            {{ participant.pseudo }}<br>
+            {{ participant.prenom }}<br>
+            {{ participant.nom }}<br>
+            {{ participant.telephone }}<br>
+            {{ participant.email }}<br>
+            {{ participant.campus.nom }}<br>
+            <button type="button">Retour</button>
+        </div>
     </div>
-</div>
 {% endblock %}

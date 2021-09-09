@@ -61,16 +61,18 @@ class Participant implements UserInterface
      */
     private $maPhoto;
 
+    /**
+     * @var Campus
+     *
+     * @ORM\ManyToOne(targetEntity="App\Entity\Campus")
+     */
+    private $campus;
+
     // options={"default" : true} cela permet d'éviter envoie de mail de confirmation
     /**
      * @ORM\Column(type="boolean", options={"default" : true})
      */
     private $actif = true;
-    /**
-     * @var null
-     */
-    private $plainPassword;
-
 
     public function getEmail(): ?string
     {
@@ -82,6 +84,22 @@ class Participant implements UserInterface
         $this->email = $email;
 
         return $this;
+    }
+
+    /**
+     * @return Campus|null
+     */
+    public function getCampus(): ?Campus
+    {
+        return $this->campus;
+    }
+
+    /**
+     * @param Campus $campus
+     */
+    public function setCampus(Campus $campus): void
+    {
+        $this->campus = $campus;
     }
 
     /**

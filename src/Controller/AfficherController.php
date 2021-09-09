@@ -2,8 +2,7 @@
 
 namespace App\Controller;
 
-use App\Repository\CampusRepository;
-use App\Repository\ParticipantRepository;
+use App\Entity\Participant;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -11,18 +10,18 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class AfficherController extends AbstractController
 {
+
     /**
-     * @Route("/afficher/{id}", name="afficher")
+     * @Route("/afficher/{participant}", name="afficher")
      */
-    public function index(int $id, ParticipantRepository $participantRepository): Response
+    public function index(Participant $participant): Response
     {
-        $participant = $participantRepository->find($id);
-        if (!$participant) {
-            throw $this->createNotFoundException('not found');
-        }
 
         return $this->render('afficher/index.html.twig', [
             "participant" => $participant,
         ]);
     }
 }
+
+
+
