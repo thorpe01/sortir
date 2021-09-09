@@ -14,21 +14,15 @@ class AfficherController extends AbstractController
     /**
      * @Route("/afficher/{id}", name="afficher")
      */
-    public function index(int $id, ParticipantRepository $participantRepository, CampusRepository $campusRepository): Response
+    public function index(int $id, ParticipantRepository $participantRepository): Response
     {
         $participant = $participantRepository->find($id);
         if (!$participant) {
             throw $this->createNotFoundException('not found');
         }
 
-        $campus = $campusRepository->find($id);
-        if (!$campus) {
-            throw $this->createNotFoundException('not found');
-        }
-
         return $this->render('afficher/index.html.twig', [
             "participant" => $participant,
-            "campus" => $campus
         ]);
     }
 }
