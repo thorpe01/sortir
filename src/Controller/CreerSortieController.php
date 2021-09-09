@@ -6,15 +6,15 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-class CréerSortieController extends AbstractController
+class CreerSortieController extends AbstractController
 {
     /**
-     * @Route("/cr/er/sortie", name="cr_er_sortie")
+     * @Route("/creer/sortie", name="creer_sortie")
      */
     public function index(): Response
     {
-        return $this->render('cr�er_sortie/index.html.twig', [
-            'controller_name' => 'CréerSortieController',
+        return $this->render('creer_sortie/index.html.twig', [
+            'controller_name' => 'CreerSortieController',
         ]);
     }
 }
