@@ -3,5 +3,10 @@
 {% block title %}Hello AfficherController!{% endblock %}
 
 {% block body %}
-{{ participant.maPhoto }}
+    <img src="{{ asset('/photos/' ~ participant.maPhoto ) }}" alt="" width="150"><br>
+    {{ participant.pseudo }}<br>
+    {{ participant.prenom }}<br>
+    {{ participant.nom }}<br>
+    {{ participant.telephone }}<br>
+    {{ participant.email }}
 {% endblock %}

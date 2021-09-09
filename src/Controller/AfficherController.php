@@ -7,6 +7,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
+
 class AfficherController extends AbstractController
 {
     /**
@@ -15,7 +16,7 @@ class AfficherController extends AbstractController
     public function index(int $id, ParticipantRepository $participantRepository): Response
     {
         $participant = $participantRepository->find($id);
-        if (!$participant){
+        if (!$participant) {
             throw $this->createNotFoundException('not found');
         }
 

@@ -71,10 +71,6 @@ class Participant implements UserInterface
      */
     private $plainPassword;
 
-    public function getId(): ?int
-    {
-        return $this->id;
-    }
 
     public function getEmail(): ?string
     {
