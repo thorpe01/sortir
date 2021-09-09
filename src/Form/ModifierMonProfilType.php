@@ -7,7 +7,6 @@ use App\Entity\Participant;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
@@ -15,11 +14,10 @@ use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
-use Symfony\Component\Validator\Constraints\IsTrue;
 use Symfony\Component\Validator\Constraints\Length;
 use Symfony\Component\Validator\Constraints\NotBlank;
 
-class RegistrationFormType extends AbstractType
+class ModifierMonProfilType extends AbstractType
 {
     /**
      * @var EntityManagerInterface
@@ -57,15 +55,7 @@ class RegistrationFormType extends AbstractType
                 'mapped' => false,
                 'required' => false
             ])
-            ->add('agreeTerms', CheckboxType::class, [
-                'mapped' => false,
-                'label' => 'Règlement du campus',
-                'constraints' => [
-                    new IsTrue([
-                        'message' => 'Veuillez accepter le règlement du campus',
-                    ]),
-                ],
-            ])
+
             // RepeatedType pour pouvoir double identification
             ->add('password', RepeatedType::class, [
                 // PasswordType pour le crytage

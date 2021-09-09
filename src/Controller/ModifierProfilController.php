@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Participant;
+use App\Form\ModifierMonProfilType;
 use App\Form\RegistrationFormType;
 use App\Security\AppAutenticatorAuthenticator;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -14,16 +15,16 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 use Symfony\Component\Security\Guard\GuardAuthenticatorHandler;
 
-class RegistrationController extends AbstractController
+class ModifierProfilController extends AbstractController
 {
     /**
-     * @Route("/register", name="app_register")
+     * @Route("/modifier", name="modifier_profil")
      */
-    public function register(Request $request, UserPasswordEncoderInterface $passwordEncoder, GuardAuthenticatorHandler $guardHandler, AppAutenticatorAuthenticator $authenticator): Response
+    public function modifier(Request $request, UserPasswordEncoderInterface $passwordEncoder, GuardAuthenticatorHandler $guardHandler, AppAutenticatorAuthenticator $authenticator): Response
     {
         $user = new Participant();
 
-        $form = $this->createForm(RegistrationFormType::class, $user);
+        $form = $this->createForm(ModifierMonProfilType::class, $user);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -61,9 +62,8 @@ class RegistrationController extends AbstractController
                 'main' // firewall name in security.yaml
             );
         }
-
-        return $this->render('registration/register.html.twig', [
-            'registrationForm' => $form->createView(),
+        return $this->render('modifier_profil/index.html.twig', [
+            'modifierForm' => $form->createView(),
         ]);
     }
 }
