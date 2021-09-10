@@ -7,8 +7,8 @@
         {% include('inc/nav.html.twig') %}
     </header>
     <h1>S'inscrire</h1>
-    <div class="form">
-        <div>
+    <div class="form" >
+        <div  >
             {{ form_start(registrationForm) }}
             {{ form_row(registrationForm.pseudo) }}
             {{ form_row(registrationForm.prenom) }}
@@ -19,10 +19,20 @@
             {{ form_row(registrationForm.campus) }}
             {{ form_row(registrationForm.maPhoto) }}
             {{ form_row(registrationForm.agreeTerms) }}
-            <button type="submit" class="btn">S'inscrire</button>
+
             {{ form_end(registrationForm) }}
+
         </div>
+
+        <div>
     </div>
-    <div>
+
+
     </div>
+    <di class="co">
+    <div >
+        <button id="btn1" type="submit" class="btn">S'inscrire</button></div>
+    <div >
+        <button id="btn2" type="submit" class="btn">Annuler</button></div>
+</di>
 {% endblock %}

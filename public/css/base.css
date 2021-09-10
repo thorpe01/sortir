@@ -42,10 +42,12 @@
     height: 20%;
 }
 ul{
+
     margin-right: 90px;
 }
 .id2 label{
     width: 400px;
+
 
 }
 h1{
@@ -53,11 +55,13 @@ h1{
     font-family:Forte;
 }
 label{
-    width: 800px;
+    font-family:Forte;
+    width: 400px;
 }
+
 .co{
 
-    margin-left: 32%;
+    margin-left: 27%;
     display: flex;
     align-content: space-between;
 
@@ -65,14 +69,15 @@ label{
 #btn2 ,#btn1{
 
     background-color: orange;
-    
+    font-family:Forte;
     margin-left: 120px;
     width: 100px;
 }
 #btn1{
     background-color: forestgreen;
-    margin-right: 20px;
+    margin-right: 10px;
     margin-left: 120px;
+    font-family:Forte;
 }
 
 
