@@ -10,8 +10,6 @@ use Symfony\Component\Routing\Annotation\Route;
 class CampusController extends AbstractController
 {
     /**
-     * Class CampusController
-     * @package AppController
      * @Route("/campus", name="campus")
      */
     public function index(CampusRepository $campusRepository): Response
