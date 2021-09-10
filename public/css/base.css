@@ -1,52 +1,84 @@
 
 .login{
+
     display: flex;
     align-items: center;
     justify-content: center;
+
 }
 .login div {
-    margin-top:5%;
+    margin-top:7%;
+    margin-bottom: 7%;
     width: 25%;
     height: 25%;
+
+
 }
 #btn{
+    background-color: forestgreen;
     width: 120px;
     margin-top: 20px;
     margin-left: 30%;
 }
 #title{
-    margin-left: 80px;
+
+    margin-left: 90px;
 }
 #img{
     height: 50px;
     width: 50px;
 }
-footer{
-
-    height: 20px;
-}
-
 
 .form{
-    margin-left: 24%;
+
+    margin-left: 40%;
+    padding-left: 20px;
     display: flex;
     align-content: center;
-
 }
 .form div {
 
     width: 20%;
     height: 20%;
+}
+ul{
+    margin-right: 90px;
+}
+.id2 label{
+    width: 400px;
 
 }
-.profil {
-    margin-left: 24%;
+h1{
+    margin-left: 30%;
+    font-family:Forte;
+}
+label{
+    width: 800px;
+}
+.co{
+
+    margin-left: 32%;
     display: flex;
-    align-content: center;
+    align-content: space-between;
+
 }
-.imgProfil {
-    margin-top: 1%;
-    float: left;
+#btn2 ,#btn1{
+
+    background-color: orange;
+    
+    margin-left: 120px;
+    width: 100px;
 }
+#btn1{
+    background-color: forestgreen;
+    margin-right: 20px;
+    margin-left: 120px;
+}
+
+
+
+
+
+
 
 

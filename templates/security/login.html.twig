@@ -23,10 +23,10 @@
         </div>
     {% endif %}
 
-    <h1 id="title" class="h3 mb-3 font-weight-normal">Se connecter </h1>
-    <label  for="inputEmail">Email</label>
+    <h1 id="title" class="h3 mb-3 font-weight-normal"style="font-family:Forte " >Se connecter </h1>
+    <label  for="inputEmail"style="font-family:Forte " >Email</label>
     <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" autocomplete="email" required autofocus>
-    <label for="inputPassword">Mot de passe</label>
+    <label for="inputPassword" style="font-family:Forte ">Mot de passe</label>
     <input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required>
 
     <input type="hidden" name="_csrf_token"
@@ -34,17 +34,16 @@
     >
 
 
-    <label>
+    <label style="font-family:Forte " >
         <input type="checkbox" name="_remember_me" > Se souvenir de moi
+        <a href="{{ asset('img/IMG.jpg') }}" style="font-family:Forte " > mot de passe oublié </a>
     </label>
 
 
 
-    <a href="{{ asset('img/IMG.jpg') }}" > mot de passe oublié </a>
-    <button id="btn" class="btn btn-lg btn-primary" type="submit">
-        Sign in
+    <button id="ide" class="btn btn-lg btn-primary" type="submit"style="font-family:Forte " >
+        connection
     </button>
-
 </form>
 
         </div>
