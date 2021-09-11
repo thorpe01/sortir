@@ -3,7 +3,12 @@
 {% block title %}Hello CampusController!{% endblock %}
 
 {% block body %}
-{% for campus  in campus %}
-    <h2>{{ campus.nom }}</h2>
-{% endfor %}
+
+    {% for campus  in campus %}
+
+        <h1>{{ campus.nom }}</h1>
+
+    {% endfor %}
+
+
 {% endblock %}

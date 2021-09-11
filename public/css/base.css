@@ -39,11 +39,8 @@ footer{
     height: 20%;
 
 }
-.profil {
-    margin-left: 24%;
-    display: flex;
-    align-content: center;
+tbody {
+    border: 2px solid red;
 }
-
 
 
