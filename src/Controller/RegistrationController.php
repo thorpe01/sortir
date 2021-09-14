@@ -56,7 +56,7 @@ class RegistrationController extends AbstractController
             $entityManager->flush();
             // do anything else you need here, like send an email
             $this->addflash('success','le participant à bien était ajouté');
-            return $this->redirectToRoute('registration/flash.html.twig' );
+            return $this->redirectToRoute('security/login1.html.twig' );
             //return $guardHandler->authenticateUserAndHandleSuccess(
                // $user,
                // $request,
@@ -69,4 +69,6 @@ class RegistrationController extends AbstractController
             'registrationForm' => $form->createView(),
         ]);
     }
+
+
 }

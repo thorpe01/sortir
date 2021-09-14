@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Log in!{% endblock %}
+
+
+
+{% block body %}
+
+    <header>
+        {% include('inc/nav1.html.twig') %}
+    </header>
+    <section>
+    {% for label, messages in app.flashes %}
+        {% for message in messages %}
+            <div class="flash-{{ label }}">
+                {{ message }}
+            </div>
+        {% endfor %}
+    {% endfor %}
+    </section>
+{% endblock %}
