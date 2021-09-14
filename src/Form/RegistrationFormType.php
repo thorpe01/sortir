@@ -30,7 +30,6 @@ class RegistrationFormType extends AbstractType
     {
         $this->entityManager = $entityManager;
     }
-
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
@@ -48,21 +47,6 @@ class RegistrationFormType extends AbstractType
                     return $campus->getNom();
                 },
 
-            ])
-            ->add('maPhoto', FileType::class, [
-                'label' => false,
-                'multiple' => false,
-                'mapped' => false,
-                'required' => false
-            ])
-            ->add('agreeTerms', CheckboxType::class, [
-                'mapped' => false,
-                'label' => 'Règlement du campus',
-                'constraints' => [
-                    new IsTrue([
-                        'message' => 'Veuillez accepter le règlement du campus',
-                    ]),
-                ],
             ])
             // RepeatedType pour pouvoir double identification
             ->add('password', RepeatedType::class, [
@@ -82,13 +66,26 @@ class RegistrationFormType extends AbstractType
                     new Length([
                         'min' => 6,
                         'minMessage' => 'votre mot de passe ne contient pas assez de {{ limit }} caractère',
+                    ]),
+                ],
+            ])
 
-
+            ->add('maPhoto', FileType::class, [
+                'label' => false,
+                'multiple' => false,
+                'mapped' => false,
+                'required' => false
+            ])
+            ->add('agreeTerms', CheckboxType::class, [
+                'mapped' => false,
+                'label' => 'Règlement du campus',
+                'constraints' => [
+                    new IsTrue([
+                        'message' => 'Veuillez accepter le règlement du campus',
                     ]),
                 ],
             ]);
     }
-
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults([

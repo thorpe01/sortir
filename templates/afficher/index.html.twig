@@ -4,9 +4,12 @@
 
 {% block body %}
     <header>
+
         {% include('inc/nav.html.twig') %}
+
+
     </header>
-    <img src="{{ asset('/photos/' ~ participant.maPhoto ) }}" alt="" width="150"><br>
+
     <div class="form">
         <div>
             {{ participant.pseudo }}<br>

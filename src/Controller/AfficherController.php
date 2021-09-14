@@ -12,13 +12,13 @@ class AfficherController extends AbstractController
 {
 
     /**
-     * @Route("/afficher/{participant}", name="afficher")
+     * @Route("/afficher", name="afficher")
      */
-    public function index(Participant $participant): Response
+    public function index(): Response
     {
 
         return $this->render('afficher/index.html.twig', [
-            "participant" => $participant,
+
         ]);
     }
 }

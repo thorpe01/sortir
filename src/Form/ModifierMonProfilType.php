@@ -75,7 +75,6 @@ class ModifierMonProfilType extends AbstractType
                         'min' => 6,
                         'minMessage' => 'votre mot de passe ne contient pas assez de {{ limit }} caractère',
 
-
                     ]),
                 ],
             ]);
@@ -83,6 +82,7 @@ class ModifierMonProfilType extends AbstractType
 
     public function configureOptions(OptionsResolver $resolver)
     {
+
         $resolver->setDefaults([
             'data_class' => Participant::class,
         ]);

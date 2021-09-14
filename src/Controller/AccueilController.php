@@ -2,22 +2,24 @@
 
 namespace App\Controller;
 
-use App\Repository\CampusRepository;
-use App\Repository\ParticipantRepository;
+
+use http\Env\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 class AccueilController extends AbstractController
 {
     /**
-     * @Route("/accueil/{id]", name="accueil")
+     * Class AccueilController
+     * @package AppController
+     * @Route("/accueil", name="accueil")
      */
-    public function index(int $id, ParticipantRepository $participantRepository): Response
+    public function index()
     {
-        $participant = $participantRepository->find($id);
         return $this->render('accueil/index.html.twig', [
-            'participant' => $participant
+            'controller_name' => 'AccueilController',
+
         ]);
     }
+
 }

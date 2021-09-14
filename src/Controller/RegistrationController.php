@@ -24,7 +24,7 @@ class RegistrationController extends AbstractController
         $user = new Participant();
 
         $form = $this->createForm(RegistrationFormType::class, $user);
-        $form->handleRequest($request);
+        $form->handleRequest($request); // récupere les données de la requete
 
         if ($form->isSubmitted() && $form->isValid()) {
             // encode the password
@@ -46,21 +46,23 @@ class RegistrationController extends AbstractController
                         $newFilename
                     );
                 } catch (FileException $e) {
-//                    dump($e);die;
+//
                 }
                 $user->setMaPhoto($newFilename);
             }
+            // pour l'insert
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($user);
             $entityManager->flush();
             // do anything else you need here, like send an email
+            $this->addflash('success','le participant à bien était ajouté');
+            return $this->redirectToRoute('registration/flash.html.twig' );
+            //return $guardHandler->authenticateUserAndHandleSuccess(
+               // $user,
+               // $request,
+               // $authenticator,
+               // 'main' // firewall name in security.yaml
 
-            return $guardHandler->authenticateUserAndHandleSuccess(
-                $user,
-                $request,
-                $authenticator,
-                'main' // firewall name in security.yaml
-            );
         }
 
         return $this->render('registration/register.html.twig', [

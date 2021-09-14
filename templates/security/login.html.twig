@@ -21,8 +21,9 @@
         <div class="mb-3">
             You are logged in as {{ app.user.username }}, <a href="{{ path('app_logout') }}">Logout</a>
         </div>
-    {% endif %}
 
+
+{% else%}
     <h1 id="title" class="h3 mb-3 font-weight-normal"style="font-family:Forte " >Se connecter </h1>
     <label  for="inputEmail"style="font-family:Forte " >Email</label>
     <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" autocomplete="email" required autofocus>
@@ -36,7 +37,7 @@
 
     <label style="font-family:Forte " >
         <input type="checkbox" name="_remember_me" > Se souvenir de moi
-        <a href="{{ asset('img/IMG.jpg') }}" style="font-family:Forte " > mot de passe oublié </a>
+        <a href="#" style="font-family:Forte " > mot de passe oublié </a>
     </label>
 
 
@@ -45,7 +46,7 @@
         connection
     </button>
 </form>
-
+            {% endif %}
         </div>
     </div>
 {% endblock %}
